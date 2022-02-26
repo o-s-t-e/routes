@@ -88,7 +88,7 @@ const Home = ({ routes, queryRoute }: RoutesProps) => {
           </header>
           <section>
             <div className="sticky z-10 flex justify-between px-5 py-4 -mx-5 bg-blur -top-5">
-              <h1 className="text-2xl font-bold text-forest-darkest">All routes</h1>
+              <h1 className="text-2xl font-bold text-forest-darkest"></h1>
               <div className="flex">
                 <Link href={{ query: { route: randomRoute.slug } }}>
                   <a
@@ -115,12 +115,13 @@ const Home = ({ routes, queryRoute }: RoutesProps) => {
                     </svg>
                   </a>
                 </Link>
+                <a>
                 <Select value={filter} onChange={e => setFilter(e.target.value)}>
                    <option value="all">All</option>
                    <option value="swimrun">Swimrun</option>
                    <option value="running">Running</option>
                  </Select>
-                
+                </a>
                 <Select value={sorting} onChange={e => setSorting(e.target.value)}>
                   <option value="added">Recently added</option>
                   <option value="rating">Rating</option>
