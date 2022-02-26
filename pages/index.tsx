@@ -26,6 +26,7 @@ type RoutesProps = {
 
 const Home = ({ routes, queryRoute }: RoutesProps) => {
   const [sorting, setSorting] = useState('added')
+  const [filter, setFilter] = useState('all')
   const aside = useRef<HTMLElement>()
   const currentRoute = routes.find(route => route.slug === queryRoute)
   const randomRoute = routes[Math.floor(Math.random() * routes.length)]
@@ -114,6 +115,12 @@ const Home = ({ routes, queryRoute }: RoutesProps) => {
                     </svg>
                   </a>
                 </Link>
+                <Select value={filter} onChange={e => setFilter(e.target.value)}>
+                   <option value="all">All</option>
+                   <option value="swimrun">Swimrun</option>
+                   <option value="running">Running</option>
+                 </Select>
+                
                 <Select value={sorting} onChange={e => setSorting(e.target.value)}>
                   <option value="added">Recently added</option>
                   <option value="rating">Rating</option>
@@ -124,9 +131,20 @@ const Home = ({ routes, queryRoute }: RoutesProps) => {
               </div>
             </div>
             <ol>
-              {routes.sort(sortRoutes).map(route => (
-                <Route key={route.slug} route={route} />
-              ))}
+                     {routes
+                 .filter(route => {
+                   if (filter === 'swimrun' && !route.swimrun) {
+                     return false
+                   }
+                   if (filter === 'running' && route.swimrun) {
+                     return false
+                   }
+                   return true
+                 })
+                 .sort(sortRoutes)
+                 .map(route => (
+                   <Route key={route.slug} route={route} />
+                 ))}
             </ol>
           </section>
           <footer className="text-center text-gray-500">
