@@ -30,7 +30,7 @@ const MapBox = ({ routes, initialLng = lng, initialLat = lat }: MapBoxProps): JS
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/outdoors-v11',
+      style: 'mapbox://styles/nicks-post/ckykf6k5jlw0y14ruy9j347zf',
       center: [initialLng, initialLat],
       zoom,
     })
