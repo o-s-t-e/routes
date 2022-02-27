@@ -5,18 +5,18 @@
 @layer base {
   @font-face {
     font-weight: 400;
-    font-family: Proxima Nova;
-    src: url(/fonts/proxima-nova-regular.woff) format('woff');
+    font-family: IBMPlexSans;
+    src: url(/fonts/IBMPlexSans-regular.woff) format('woff');
   }
   @font-face {
     font-weight: 600;
-    font-family: Proxima Nova;
-    src: url(/fonts/proxima-nova-semibold.woff) format('woff');
+    font-family: IBMPlexSans;
+    src: url(/fonts/IBMPlexSans-semibold.woff) format('woff');
   }
   @font-face {
     font-weight: 700;
-    font-family: Proxima Nova;
-    src: url(/fonts/proxima-nova-bold.woff) format('woff');
+    font-family: IBMPlexSans;
+    src: url(/fonts/IBMPlexSans-bold.woff) format('woff');
   }
 }
 
