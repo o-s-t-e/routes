@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Proxima Nova', ...fontFamily.sans],
+        sans: ['IBMPlexSans', ...fontFamily.sans],
       },
       colors: {
         forest: {
