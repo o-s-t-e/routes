@@ -27,9 +27,9 @@ const RoutePage = ({ route, children }: { route: Route; children: ReactNode }): 
   return (
     <motion.div
       className="absolute top-0 w-full min-h-screen px-5 -ml-5 -mr-5 bg-white"
-      initial={{ x: 430 }}
+      initial={{ x: 0 }}
       animate={{ x: 0 }}
-      transition={{ ease: 'easeOut', duration: 0.2 }}
+      transition={{ ease: 'easeOut', duration: 0 }}
     >
       <NextSeo
         title={seoTitle}
@@ -160,7 +160,7 @@ const RoutePage = ({ route, children }: { route: Route; children: ReactNode }): 
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Strava
+                Link
               </a>
               .
             </p>
