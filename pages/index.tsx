@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { GetServerSideProps } from 'next'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 // Components
@@ -59,6 +60,20 @@ const Home = ({ routes, queryRoute }: RoutesProps) => {
         className="w-full sm:w-[430px] bg-white min-h-screen overflow-y-scroll overflow-x-hidden sm:absolute top-0 bottom-0 p-5"
         ref={aside}
       >
+        <motion.div
+          animate={
+            queryRoute
+              ? {
+                  x: '0%',
+                  scale: 1,
+                  transitionEnd: {
+                    display: 'none',
+                  },
+                }
+              : { x: 0, scale: 1, display: 'block' }
+          }
+          transition={{ ease: 'easeOut', duration: 0 }}
+        >
           <nav className="flex justify-end">
             <Button onClick={() => window.open('mailto:samuelkraft@me.com?subject=🏃‍♀️ I want to add a route to Trail Runner!')}>
               Add Route
@@ -139,6 +154,7 @@ const Home = ({ routes, queryRoute }: RoutesProps) => {
               @samuelkraft
             </a>
           </footer>
+        </motion.div>
         <RoutePage route={currentRoute}>
           {currentRoute && (
             <div className="relative block pb-[56%] mb-8 -m-5 text-xl sm:hidden text-forest">
