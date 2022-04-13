@@ -15,6 +15,7 @@ import type { Routes } from 'types'
 
 // Hooks
 import { useIsSmall } from 'utils/hooks'
+import Nav from 'components/nav'
 
 // Data
 const gpxUtils = require('../utils/gpxutils.js')
@@ -73,7 +74,7 @@ const Home = ({ routes, queryRoute }: RoutesProps) => {
               : { x: 0, scale: 1, display: 'block' }
           }
           transition={{ ease: 'easeOut', duration: 0 }}
-        >
+        >          <Nav />
           <nav className="flex justify-end">
             <Button onClick={() => window.open('mailto:samuelkraft@me.com?subject=🏃‍♀️ I want to add a route to Trail Runner!')}>
               Add Route
