@@ -37,3 +37,8 @@ div.mapboxgl-map {
   font-family: 'IBMPlexSans', Helvetica Neue;
   text-decoration: underline;
 }
+
+.blogpost * {
+   line-height: 1.5;
+   font-size: 21px;
+ }
